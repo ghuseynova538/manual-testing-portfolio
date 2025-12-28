@@ -19,6 +19,24 @@ Bu layihə çərçivəsində bir veb saytın giriş panelini müxtəlif ssenaril
 * **Ciddilik:** Yüksək (High).
 * **Status:** Tapıldı.
 
+Bug ID: BUG-001
+
+Başlıq: Axtarış düyməsi boş buraxıldıqda səhifə yenilənmir.
+
+Ciddilik (Severity): Medium (Orta).
+
+Addımlar:
+
+Sayta gir.
+
+Axtarış xanasına heç nə yazma.
+
+"Axtar" düyməsini sıx.
+
+Gözlənilən: "Lütfən bir söz daxil edin" xəbərdarlığı görünməlidir.
+
+Faktiki: Heç bir reaksiya yoxdur.
+
 ## 🛠 İstifadə etdiyim alətlər
 - **Test İdarəetmə:** Google Sheets / Excel
 - **Bug İzləmə:** GitHub Issues
