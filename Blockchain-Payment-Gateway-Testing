@@ -1,0 +1,23 @@
+Bug Report: Incorrect Payment Validation (Maliyyə İtkisi Riski)
+
+Summary (Xülasə): Sistem əskik ödəniş (Underpayment) zamanı sifarişi səhvən "Confirmed" (Təsdiqləndi) statusuna keçirir.
+
+Severity: Critical 🔴 Priority: High ⚡
+
+Steps to Reproduce (Xətanı təkrarlamaq üçün addımlar):
+
+Saytda 0.0015 BTC-lik bir məhsul seç və sifariş yarat.
+
+Sistem tərəfindən verilən unikal ünvana qəsdən 0.0014 BTC göndər.
+
+Blockchain-də 3 təsdiq (confirmation) gözlə.
+
+Sistemin sifariş statusunu necə dəyişdiyini izlə.
+
+Actual Result (Mövcud nəticə): Sistem məbləğin tam olub-olmadığını yoxlamır, ödəniş gəldiyi üçün sifarişi təsdiqləyir və "Uğurlu ödəniş" mesajı çıxarır.
+
+Expected Result (Gözlənilən nəticə): Sistem daxil olan məbləği (received_amount) tələb olunan məbləğlə (required_amount) müqayisə etməlidir. Əgər received_amount < required_amount olarsa:
+
+Sifariş statusu "Partially Paid" (Qismən ödənilib) olaraq qalmalıdır.
+
+İstifadəçiyə çatışmayan məbləğ (0.0001 BTC) barədə xəbərdarlıq çıxmalıdır.
